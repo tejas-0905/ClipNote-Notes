@@ -61,3 +61,4 @@ note.className = `
   `;
 
   note.innerHTML = html;
+const editBtn = note.querySelector('.edit');
