@@ -47,3 +47,4 @@ if (note.value.trim() !== '') {
 localStorage.setItem('notes', JSON.stringify(notes));
 };
 const addNewNote = (text = '') => {
+ const note = document.createElement('div');
