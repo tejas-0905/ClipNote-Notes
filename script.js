@@ -65,3 +65,10 @@ const editBtn = note.querySelector('.edit');
 const deleteBtn = note.querySelector('.delete');
 const noteTxt = note.querySelector('.noteTxt');
 const textArea = note.querySelector('textarea');
+deleteBtn.addEventListener('click', () => {
+    note.classList.add('animate-fade-out', 'opacity-0', 'scale-95');
+    setTimeout(() => {
+      note.remove();
+      updateNote();
+    }, 300);
+  });
