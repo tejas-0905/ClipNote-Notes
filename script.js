@@ -75,3 +75,6 @@ deleteBtn.addEventListener('click', () => {
 editBtn.addEventListener('click', () => {
     noteTxt.classList.toggle('hidden');
     textArea.classList.toggle('hidden');
+ if (textArea.classList.contains('hidden')) {
+      noteTxt.innerHTML = textArea.value.trim();
+      editBtn.textContent = 'edit_note';
