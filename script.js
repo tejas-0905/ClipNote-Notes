@@ -87,3 +87,5 @@ textArea.addEventListener('input', () => {
     noteTxt.innerHTML = textArea.value;
     updateNote();
   });
+ notesContainer.appendChild(note);
+};
