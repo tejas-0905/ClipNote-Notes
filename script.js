@@ -40,3 +40,7 @@ const updateNote = () => {
   const textAreas = document.querySelectorAll('textarea');
   const notes = [];
 textAreas.forEach(note => {
+if (note.value.trim() !== '') {
+      notes.push(note.value.trim());
+    }
+  });
