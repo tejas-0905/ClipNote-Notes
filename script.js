@@ -6,3 +6,4 @@ const notesContainer = document.getElementById('notesContainer');
 const body = document.body;
 
 const setTheme = (mode) => {
+if (mode === 'dark') {
