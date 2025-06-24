@@ -55,3 +55,7 @@ const html = `
     <div class="flex justify-end gap-2 mb-2">
 <button class="edit material-icons-round text-green-600 hover:text-green-400 transition">${text ? 'edit_note' : 'done'}</button>
 <button class="delete material-icons-round text-red-600 hover:text-red-400 transition">delete</button>
+</div>
+    <div class="noteTxt text-gray-800 dark:text-gray-200 overflow-y-auto flex-grow mb-2 ${text ? '' : 'hidden'}">${text}</div>
+    <textarea class="w-full resize-none border border-yellow-400 rounded p-2 outline-none placeholder-gray-400 dark:bg-gray-700 dark:text-white ${text ? 'hidden' : ''}" rows="5" placeholder="Type your note...">${text}</textarea>
+  `;
