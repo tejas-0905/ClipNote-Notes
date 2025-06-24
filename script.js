@@ -64,3 +64,4 @@ note.className = `
 const editBtn = note.querySelector('.edit');
 const deleteBtn = note.querySelector('.delete');
 const noteTxt = note.querySelector('.noteTxt');
+const textArea = note.querySelector('textarea');
