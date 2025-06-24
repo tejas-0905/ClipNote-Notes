@@ -23,3 +23,4 @@ toggleBtn.addEventListener('click', () => {
   const newTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
   setTheme(newTheme);
 });
+const setLayout = (layout) => {
