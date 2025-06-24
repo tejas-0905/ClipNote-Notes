@@ -51,3 +51,5 @@ const addNewNote = (text = '') => {
 note.className = `
     bg-white dark:bg-gray-800 border-l-4 border-yellow-400 rounded-xl shadow-lg p-4 flex flex-col justify-between h-56
     animate-fade-in transition-transform duration-300 transform hover:scale-105`;
+const html = `
+    <div class="flex justify-end gap-2 mb-2">
