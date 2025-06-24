@@ -46,3 +46,4 @@ if (note.value.trim() !== '') {
   });
 localStorage.setItem('notes', JSON.stringify(notes));
 };
+const addNewNote = (text = '') => {
