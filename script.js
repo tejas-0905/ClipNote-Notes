@@ -10,3 +10,5 @@ if (mode === 'dark') {
 body.classList.remove('bg-green-100');
 body.classList.add('bg-gray-900', 'text-white');
 toggleBtn.textContent = 'light_mode';
+} else {
+    body.classList.add('bg-green-100');
