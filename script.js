@@ -44,3 +44,5 @@ if (note.value.trim() !== '') {
       notes.push(note.value.trim());
     }
   });
+localStorage.setItem('notes', JSON.stringify(notes));
+};
