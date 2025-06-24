@@ -89,3 +89,5 @@ textArea.addEventListener('input', () => {
   });
  notesContainer.appendChild(note);
 };
+const savedNotes = JSON.parse(localStorage.getItem('notes') || '[]');
+savedNotes.forEach(note => addNewNote(note));
