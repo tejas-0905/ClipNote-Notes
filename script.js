@@ -83,3 +83,7 @@ editBtn.addEventListener('click', () => {
       editBtn.textContent = 'done';
     }
   });
+textArea.addEventListener('input', () => {
+    noteTxt.innerHTML = textArea.value;
+    updateNote();
+  });
