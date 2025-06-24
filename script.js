@@ -7,3 +7,4 @@ const body = document.body;
 
 const setTheme = (mode) => {
 if (mode === 'dark') {
+body.classList.remove('bg-green-100');
