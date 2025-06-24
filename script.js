@@ -63,3 +63,4 @@ note.className = `
   note.innerHTML = html;
 const editBtn = note.querySelector('.edit');
 const deleteBtn = note.querySelector('.delete');
+const noteTxt = note.querySelector('.noteTxt');
