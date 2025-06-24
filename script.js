@@ -36,3 +36,6 @@ const savedLayout = localStorage.getItem('layout') || 'grid';
 setLayout(savedLayout);
 gridBtn.addEventListener('click', () => setLayout('grid'));
 listBtn.addEventListener('click', () => setLayout('list'));
+const updateNote = () => {
+  const textAreas = document.querySelectorAll('textarea');
+  const notes = [];
