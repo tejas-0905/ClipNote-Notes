@@ -48,3 +48,6 @@ localStorage.setItem('notes', JSON.stringify(notes));
 };
 const addNewNote = (text = '') => {
  const note = document.createElement('div');
+note.className = `
+    bg-white dark:bg-gray-800 border-l-4 border-yellow-400 rounded-xl shadow-lg p-4 flex flex-col justify-between h-56
+    animate-fade-in transition-transform duration-300 transform hover:scale-105`;
