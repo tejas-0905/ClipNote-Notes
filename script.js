@@ -78,3 +78,8 @@ editBtn.addEventListener('click', () => {
  if (textArea.classList.contains('hidden')) {
       noteTxt.innerHTML = textArea.value.trim();
       editBtn.textContent = 'edit_note';
+ updateNote();
+    } else {
+      editBtn.textContent = 'done';
+    }
+  });
