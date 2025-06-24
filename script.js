@@ -91,3 +91,4 @@ textArea.addEventListener('input', () => {
 };
 const savedNotes = JSON.parse(localStorage.getItem('notes') || '[]');
 savedNotes.forEach(note => addNewNote(note));
+addBtn.addEventListener('click', () => addNewNote());
