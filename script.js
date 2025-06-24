@@ -32,3 +32,5 @@ else if (layout === 'list') {
   }
  localStorage.setItem('layout', layout);
 };
+const savedLayout = localStorage.getItem('layout') || 'grid';
+setLayout(savedLayout);
