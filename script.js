@@ -53,3 +53,4 @@ note.className = `
     animate-fade-in transition-transform duration-300 transform hover:scale-105`;
 const html = `
     <div class="flex justify-end gap-2 mb-2">
+<button class="edit material-icons-round text-green-600 hover:text-green-400 transition">${text ? 'edit_note' : 'done'}</button>
