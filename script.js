@@ -35,3 +35,4 @@ else if (layout === 'list') {
 const savedLayout = localStorage.getItem('layout') || 'grid';
 setLayout(savedLayout);
 gridBtn.addEventListener('click', () => setLayout('grid'));
+listBtn.addEventListener('click', () => setLayout('list'));
