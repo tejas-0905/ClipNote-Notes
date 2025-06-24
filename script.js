@@ -15,3 +15,5 @@ toggleBtn.textContent = 'light_mode';
     body.classList.remove('bg-gray-900', 'text-white');
     toggleBtn.textContent = 'dark_mode';
   }
+    localStorage.setItem('theme', mode);
+};
