@@ -72,3 +72,6 @@ deleteBtn.addEventListener('click', () => {
       updateNote();
     }, 300);
   });
+editBtn.addEventListener('click', () => {
+    noteTxt.classList.toggle('hidden');
+    textArea.classList.toggle('hidden');
