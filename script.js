@@ -17,3 +17,5 @@ toggleBtn.textContent = 'light_mode';
   }
     localStorage.setItem('theme', mode);
 };
+const savedTheme = localStorage.getItem('theme') || 'light';
+setTheme(savedTheme);
