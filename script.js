@@ -39,3 +39,4 @@ listBtn.addEventListener('click', () => setLayout('list'));
 const updateNote = () => {
   const textAreas = document.querySelectorAll('textarea');
   const notes = [];
+textAreas.forEach(note => {
