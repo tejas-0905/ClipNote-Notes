@@ -19,3 +19,7 @@ toggleBtn.textContent = 'light_mode';
 };
 const savedTheme = localStorage.getItem('theme') || 'light';
 setTheme(savedTheme);
+toggleBtn.addEventListener('click', () => {
+  const newTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+});
