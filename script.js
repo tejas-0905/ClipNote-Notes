@@ -30,3 +30,5 @@ if (layout === 'grid') {
 else if (layout === 'list') {
     notesContainer.className = "flex flex-col gap-4";
   }
+ localStorage.setItem('layout', layout);
+};
