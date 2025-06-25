@@ -1,31 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ClipNote | Notes</title>
-<link rel="shortcut icon" href="./assets/clipnotes.png" type="image/x-icon" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-<style>
+  <title>ClipNote | Notes</title>
+  <link rel="shortcut icon" href="./assets/clipnotes.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
- @keyframes fade-in {
+
+    @keyframes fade-in {
       from {
         opacity: 0;
         transform: scale(0.95);
       }
-to {
+      to {
         opacity: 1;
         transform: scale(1);
       }
     }
-@keyframes fade-out {
+
+    @keyframes fade-out {
       from {
         opacity: 1;
         transform: scale(1);
@@ -36,51 +37,62 @@ to {
       }
     }
 
-.animate-fade-in {
+    .animate-fade-in {
       animation: fade-in 0.3s ease-out forwards;
     }
 
- .animate-fade-out {
+    .animate-fade-out {
       animation: fade-out 0.3s ease-out forwards;
     }
-::-webkit-scrollbar {
+
+    ::-webkit-scrollbar {
       width: 6px;
     }
- ::-webkit-scrollbar-thumb {
+
+    ::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.2);
       border-radius: 4px;
     }
-
- </style>
+  </style>
 </head>
 <body class="bg-green-100 dark:bg-gray-900 transition-colors duration-300 text-gray-900 dark:text-white">
-<header class="w-full py-5 bg-gray-900 text-white shadow-md">
-<div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-<a class="text-3xl font-bold text-yellow-400 hover:text-yellow-500 transition flex items-center gap-2" href="/">
- <i class="material-icons-round text-4xl">description</i> We Keep
+
+  <!-- Header -->
+  <header class="w-full py-5 bg-gray-900 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <a class="text-3xl font-bold text-yellow-400 hover:text-yellow-500 transition flex items-center gap-2" href="/">
+        <i class="material-icons-round text-4xl">description</i> We Keep
       </a>
-<div class="flex items-center gap-3">
-<button id="toggleMode" title="Toggle Theme" class="text-yellow-400 hover:text-yellow-300 material-icons-round text-3xl transition">
+      <div class="flex items-center gap-3">
+        <!-- Dark Mode Toggle -->
+        <button id="toggleMode" title="Toggle Theme" class="text-yellow-400 hover:text-yellow-300 material-icons-round text-3xl transition">
           dark_mode
         </button>
-<button id="gridView" title="Grid View" class="material-icons-round text-yellow-400 hover:text-yellow-300 text-2xl transition">
+        <!-- Layout Toggles -->
+        <button id="gridView" title="Grid View" class="material-icons-round text-yellow-400 hover:text-yellow-300 text-2xl transition">
           grid_view
         </button>
-<button id="listView" title="List View" class="material-icons-round text-yellow-400 hover:text-yellow-300 text-2xl transition">
+        <button id="listView" title="List View" class="material-icons-round text-yellow-400 hover:text-yellow-300 text-2xl transition">
           view_agenda
         </button>
-<button id="addBtn" class="flex items-center gap-2 px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-medium rounded-lg shadow transition duration-200">
+        <!-- Add Note -->
+        <button id="addBtn" class="flex items-center gap-2 px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-medium rounded-lg shadow transition duration-200">
           <i class="material-icons-round">add</i> Add Note
         </button>
       </div>
     </div>
   </header>
-<main class="px-4 sm:px-10 py-10">
+
+  <!-- Notes Section -->
+  <main class="px-4 sm:px-10 py-10">
     <div id="layoutWrapper">
       <div id="notesContainer" class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <!-- Dynamic Notes Will Appear Here -->
       </div>
     </div>
   </main>
-<script src="./assets/script.js"></script>
+
+  <!-- JavaScript -->
+  <script src="./assets/script.js"></script>
 </body>
 </html>
