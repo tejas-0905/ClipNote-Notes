@@ -5,53 +5,66 @@ const listBtn = document.getElementById('listView');
 const notesContainer = document.getElementById('notesContainer');
 const body = document.body;
 
+// === THEME TOGGLE ===
 const setTheme = (mode) => {
-if (mode === 'dark') {
-body.classList.remove('bg-green-100');
-body.classList.add('bg-gray-900', 'text-white');
-toggleBtn.textContent = 'light_mode';
-} else {
+  if (mode === 'dark') {
+    body.classList.remove('bg-green-100');
+    body.classList.add('bg-gray-900', 'text-white');
+    toggleBtn.textContent = 'light_mode';
+  } else {
     body.classList.add('bg-green-100');
     body.classList.remove('bg-gray-900', 'text-white');
     toggleBtn.textContent = 'dark_mode';
   }
-    localStorage.setItem('theme', mode);
+  localStorage.setItem('theme', mode);
 };
+
 const savedTheme = localStorage.getItem('theme') || 'light';
 setTheme(savedTheme);
+
 toggleBtn.addEventListener('click', () => {
   const newTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
   setTheme(newTheme);
 });
+
+// === LAYOUT SWITCHING ===
 const setLayout = (layout) => {
-if (layout === 'grid') {
+  if (layout === 'grid') {
     notesContainer.className = "grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5";
-  }
-else if (layout === 'list') {
+  } else if (layout === 'list') {
     notesContainer.className = "flex flex-col gap-4";
   }
- localStorage.setItem('layout', layout);
+  localStorage.setItem('layout', layout);
 };
+
 const savedLayout = localStorage.getItem('layout') || 'grid';
 setLayout(savedLayout);
+
 gridBtn.addEventListener('click', () => setLayout('grid'));
 listBtn.addEventListener('click', () => setLayout('list'));
+
+// === NOTES STORAGE ===
 const updateNote = () => {
   const textAreas = document.querySelectorAll('textarea');
   const notes = [];
-textAreas.forEach(note => {
-if (note.value.trim() !== '') {
+
+  textAreas.forEach(note => {
+    if (note.value.trim() !== '') {
       notes.push(note.value.trim());
     }
   });
-localStorage.setItem('notes', JSON.stringify(notes));
+
+  localStorage.setItem('notes', JSON.stringify(notes));
 };
+
+// === ADD NOTE ===
 const addNewNote = (text = '') => {
- const note = document.createElement('div');
-note.className = `
+  const note = document.createElement('div');
+  note.className = `
     bg-white dark:bg-gray-800 border-l-4 border-yellow-400 rounded-xl shadow-lg p-4 flex flex-col justify-between h-56
     animate-fade-in transition-transform duration-300 transform hover:scale-105`;
- const html = `
+
+  const html = `
     <div class="flex justify-end gap-2 mb-2">
       <button class="edit material-icons-round text-green-600 hover:text-green-400 transition">${text ? 'edit_note' : 'done'}</button>
       <button class="delete material-icons-round text-red-600 hover:text-red-400 transition">delete</button>
@@ -61,34 +74,47 @@ note.className = `
   `;
 
   note.innerHTML = html;
-const editBtn = note.querySelector('.edit');
-const deleteBtn = note.querySelector('.delete');
-const noteTxt = note.querySelector('.noteTxt');
-const textArea = note.querySelector('textarea');
-deleteBtn.addEventListener('click', () => {
+
+  const editBtn = note.querySelector('.edit');
+  const deleteBtn = note.querySelector('.delete');
+  const noteTxt = note.querySelector('.noteTxt');
+  const textArea = note.querySelector('textarea');
+
+  // Delete
+  deleteBtn.addEventListener('click', () => {
     note.classList.add('animate-fade-out', 'opacity-0', 'scale-95');
     setTimeout(() => {
       note.remove();
       updateNote();
     }, 300);
   });
-editBtn.addEventListener('click', () => {
+
+  // Edit
+  editBtn.addEventListener('click', () => {
     noteTxt.classList.toggle('hidden');
     textArea.classList.toggle('hidden');
- if (textArea.classList.contains('hidden')) {
+
+    if (textArea.classList.contains('hidden')) {
       noteTxt.innerHTML = textArea.value.trim();
       editBtn.textContent = 'edit_note';
- updateNote();
+      updateNote();
     } else {
       editBtn.textContent = 'done';
     }
   });
-textArea.addEventListener('input', () => {
+
+  // Live update
+  textArea.addEventListener('input', () => {
     noteTxt.innerHTML = textArea.value;
     updateNote();
   });
- notesContainer.appendChild(note);
+
+  notesContainer.appendChild(note);
 };
+
+// === INITIAL LOAD ===
 const savedNotes = JSON.parse(localStorage.getItem('notes') || '[]');
 savedNotes.forEach(note => addNewNote(note));
+
+// === ADD BUTTON ===
 addBtn.addEventListener('click', () => addNewNote());
