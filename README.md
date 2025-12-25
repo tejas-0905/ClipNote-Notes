@@ -26,7 +26,5 @@ This project is ideal as a starting point for anyone learning front-end web deve
 
 *No backend required — all functionality is client-side.* 👍
 
----
 
-## 📁 Project Structure
 
